@@ -19,7 +19,7 @@ export class AccountSettings {
       buttons: [
         {
           text: 'Logout',
-          icon: !this.platform.is('ios') ? 'trash' : null,
+          icon: !this.platform.is('ios') ? 'ion-log-out' : null,
           handler: () => {
             console.log('Logout clicked');
           }
@@ -27,7 +27,7 @@ export class AccountSettings {
         {
           text: 'Delete Account',
           role: 'destructive',
-          icon: !this.platform.is('ios') ? 'share' : null,
+          icon: !this.platform.is('ios') ? 'ion-trash-a' : null,
           handler: () => {
             console.log('Delete clicked');
           }

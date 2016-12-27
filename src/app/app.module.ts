@@ -4,6 +4,9 @@ import { MyApp } from './app.component';
 import { AccountSettings } from '../pages/account-settings/account-settings';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ListPage } from '../pages/list/list';
+import { HttpModule }    from '@angular/http';
+
+import { ItemDetailService }    from '../pages/item-details/item-detail.service';
 
 @NgModule({
   declarations: [
@@ -13,7 +16,8 @@ import { ListPage } from '../pages/list/list';
     ListPage
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -22,6 +26,9 @@ import { ListPage } from '../pages/list/list';
     ItemDetailsPage,
     ListPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ItemDetailService
+  ]
 })
 export class AppModule {}
