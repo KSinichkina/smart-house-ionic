@@ -1,3 +1,4 @@
+import { NgModule } from '@angular/core';
 import { Component, ViewChild } from '@angular/core';
 
 import { Platform, MenuController, Nav } from 'ionic-angular';
@@ -7,14 +8,12 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 import { AccountSettings } from '../pages/account-settings/account-settings';
 import { ListPage } from '../pages/list/list';
 
-
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  // make HelloIonicPage the root (or first) page
   rootPage: any = ListPage;
   pages: Array<{title: string, component: any}>;
 

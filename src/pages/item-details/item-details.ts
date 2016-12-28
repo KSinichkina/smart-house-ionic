@@ -18,7 +18,7 @@ export class ItemDetailsPage {
 
   getHeroes(): void {
     this.ItemDetailService
-      .getHeroes(this.searchSensore.queryParam)
+      .getHeroes(this.searchSensore.sensoreName)
       .subscribe(items => this.items = items);
   }
 
@@ -29,17 +29,35 @@ export class ItemDetailsPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private ItemDetailService: ItemDetailService) {
     this.searchSensore = navParams.get('item');
-    this.items = [{
-      "id": 1,
-        "temperature": 22,
-        "humidity": 34,
-        "messDate": "2016-12-01 21:46:28.233"
-    },
-    {
-      "id": 2,
-      "temperature": 22,
-      "humidity": 34,
-      "messDate": "2016-12-01 21:51:48.086"
-    }];
+
+
+    //TODO: remove map data after backend impl
+    switch (this.searchSensore.sensoreName) {
+      case 'temperature':
+        this.items = [{
+          "id": 1,
+          "data": 22,
+          "messDate": "2016-12-01 21:46:28.233"
+        },
+          {
+            "id": 2,
+            "data": 22,
+            "messDate": "2016-12-01 21:51:48.086"
+          }];
+        break;
+
+      case 'humidity':
+        this.items = [{
+          "id": 1,
+          "data": 34,
+          "messDate": "2016-12-01 21:46:28.233"
+        },
+          {
+            "id": 2,
+            "data": 34,
+            "messDate": "2016-12-01 21:51:48.086"
+          }];
+        break;
+    }
   }
 }
