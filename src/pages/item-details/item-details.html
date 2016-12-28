@@ -3,30 +3,52 @@
     <button menuToggle *ngIf="!selectedItem">
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Item Details</ion-title>
+    <ion-title>{{searchSensore.sensoreName}}</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <h3 text-center *ngIf="selectedItem">
-    {{selectedItem.title}}
-    <ion-icon [name]="selectedItem.icon"></ion-icon>
-  </h3>
-  <h4 text-center *ngIf="selectedItem">
-    You navigated here from <b>{{selectedItem.title}}</b>
-  </h4>
-
   <ion-card>
 
-    <img src="assets/img/home-temp.jpg"/>
+    <div class="item-detail-image is-{{searchSensore.sensoreName}}"></div>
 
-    <h3 *ngFor="let item of items">
-      {{item.id}}
-      {{item.data}}
-      {{item.messDate | date}}
-    </h3>
+    <table class="item-detail-table">
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th>{{searchSensore.sensoreName}}</th>
+        <th>Date</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of items">
+        <td>{{item.id}}</td>
+        <td>{{item.data}}</td>
+        <td>{{item.messDate | date}}</td>
+      </tr>
+      </tbody>
+    </table>
 
   </ion-card>
+
+  <!--<ion-card class="item-detail is-{{searchSensore.sensoreName}}">-->
+  <!--<table>-->
+  <!--<thead>-->
+  <!--<tr>-->
+  <!--<th>Id</th>-->
+  <!--<th>{{searchSensore.sensoreName}}</th>-->
+  <!--<th>Date</th>-->
+  <!--</tr>-->
+  <!--</thead>-->
+  <!--<tbody>-->
+  <!--<tr *ngFor="let item of items">-->
+  <!--<td>{{item.id}}</td>-->
+  <!--<td>{{item.data}}</td>-->
+  <!--<td>{{item.messDate | date}}</td>-->
+  <!--</tr>-->
+  <!--</tbody>-->
+  <!--</table>-->
+  <!--</ion-card>-->
 
 
 </ion-content>

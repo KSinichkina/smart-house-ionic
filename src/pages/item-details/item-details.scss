@@ -1,3 +1,22 @@
 page-item-details {
 
+  .item-detail-image {
+    height: 200px;
+
+    &.is-temperature {
+      background: url('../../assets/img/temperature.jpg') center center;
+      background-size: cover;
+    }
+
+    &.is-humidity {
+      background: url('../../assets/img/humidity.jpg') center center;
+      background-size: cover;
+    }
+  }
+
+  .item-detail-table {
+    margin: 10px 0;
+    width: 100%;
+    text-align: center;
+  }
 }
