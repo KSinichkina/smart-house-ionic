@@ -17,7 +17,7 @@ export class ItemDetailsPage {
   searchSensore:any;
 
   getHeroes(): void {
-    this.ItemDetailService
+    this.itemDetailService
       .getHeroes(this.searchSensore.sensoreName)
       .subscribe(items => this.items = items);
   }
@@ -27,11 +27,11 @@ export class ItemDetailsPage {
     this.getHeroes();
   }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private ItemDetailService: ItemDetailService) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private itemDetailService: ItemDetailService) {
     this.searchSensore = navParams.get('item');
 
 
-    //TODO: remove map data after backend impl
+    //TODO: remove mock data after integration
     switch (this.searchSensore.sensoreName) {
       case 'temperature':
         this.items = [{
