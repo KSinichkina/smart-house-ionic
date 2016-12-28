@@ -9,8 +9,8 @@ import { ItemDetailModel } from './item-detail.model';
 
 @Component({
   selector: 'page-item-details',
-  templateUrl: 'item-details.html',
-  providers: [ItemDetailService]
+  templateUrl: 'item-details.html'
+  //providers: [ItemDetailService]
 })
 export class ItemDetailsPage {
   items: ItemDetailModel[];

@@ -7,6 +7,7 @@ import { ListPage } from '../pages/list/list';
 import { HttpModule }    from '@angular/http';
 
 import { ItemDetailService }    from '../pages/item-details/item-detail.service';
+import { ListService }    from '../pages/list/list.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ItemDetailService }    from '../pages/item-details/item-detail.service'
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ItemDetailService
+    ItemDetailService,
+    ListService
   ]
 })
 export class AppModule {}

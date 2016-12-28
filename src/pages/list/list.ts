@@ -9,8 +9,8 @@ import { ListService } from './list.service';
 
 @Component({
   selector: 'page-list',
-  templateUrl: 'list.html',
-  providers: [ListService]
+  templateUrl: 'list.html'
+  //providers: [ListService]
 })
 export class ListPage {
   selectedItem: any;
