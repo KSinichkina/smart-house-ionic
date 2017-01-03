@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable }        from 'rxjs/Observable';
+import { Component } from '@angular/core';
 import { Subject }           from 'rxjs/Subject';
 
 import { NavController, NavParams } from 'ionic-angular';
@@ -24,7 +23,7 @@ export class ItemDetailsPage {
 
 
   ngOnInit(): void {
-    this.getHeroes();
+    //this.getHeroes();
   }
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private itemDetailService: ItemDetailService) {

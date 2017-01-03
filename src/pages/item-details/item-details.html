@@ -9,14 +9,13 @@
 
 <ion-content>
   <ion-card>
-
     <div class="item-detail-image is-{{searchSensore.sensoreName}}"></div>
 
     <table class="item-detail-table">
       <thead>
       <tr>
         <th>Id</th>
-        <th>{{searchSensore.sensoreName}}</th>
+        <th>{{searchSensore.sensoreName | capitalize}}</th>
         <th>Date</th>
       </tr>
       </thead>
@@ -24,31 +23,10 @@
       <tr *ngFor="let item of items">
         <td>{{item.id}}</td>
         <td>{{item.data}}</td>
-        <td>{{item.messDate | date}}</td>
+        <td>{{item.messDate | dateFormat}}</td><!-- date pipe not working-bug in Angular2-->
       </tr>
       </tbody>
     </table>
 
   </ion-card>
-
-  <!--<ion-card class="item-detail is-{{searchSensore.sensoreName}}">-->
-  <!--<table>-->
-  <!--<thead>-->
-  <!--<tr>-->
-  <!--<th>Id</th>-->
-  <!--<th>{{searchSensore.sensoreName}}</th>-->
-  <!--<th>Date</th>-->
-  <!--</tr>-->
-  <!--</thead>-->
-  <!--<tbody>-->
-  <!--<tr *ngFor="let item of items">-->
-  <!--<td>{{item.id}}</td>-->
-  <!--<td>{{item.data}}</td>-->
-  <!--<td>{{item.messDate | date}}</td>-->
-  <!--</tr>-->
-  <!--</tbody>-->
-  <!--</table>-->
-  <!--</ion-card>-->
-
-
 </ion-content>

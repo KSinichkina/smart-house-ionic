@@ -4,12 +4,14 @@ page-item-details {
     height: 200px;
 
     &.is-temperature {
-      background: url('../../assets/img/temperature.jpg') center center;
+      background-image: url('../assets/img/temperature.jpg');
+      background-position:  center center;
       background-size: cover;
     }
 
     &.is-humidity {
-      background: url('../../assets/img/humidity.jpg') center center;
+      background-image: url('../assets/img/humidity.jpg');
+      background-position:  center center;
       background-size: cover;
     }
   }

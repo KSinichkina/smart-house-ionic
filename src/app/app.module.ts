@@ -6,6 +6,9 @@ import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ListPage } from '../pages/list/list';
 import { HttpModule }    from '@angular/http';
 
+import {CapitalizePipe} from "./pipes/capitalize.pipe";
+import {DatePipe} from "./pipes/date.pipe";
+
 import { ItemDetailService }    from '../pages/item-details/item-detail.service';
 import { ListService }    from '../pages/list/list.service';
 
@@ -14,6 +17,8 @@ import { ListService }    from '../pages/list/list.service';
     MyApp,
     AccountSettings,
     ItemDetailsPage,
+    CapitalizePipe,
+    DatePipe,
     ListPage
   ],
   imports: [

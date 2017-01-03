@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 import { ItemDetailsPage } from '../item-details/item-details';
-
 import { ListService } from './list.service';
 
 
@@ -25,7 +24,7 @@ export class ListPage {
 
 
   ngOnInit(): void {
-    this.getSensoresList();
+    //this.getSensoresList();
   }
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public listService: ListService) {
