@@ -38,7 +38,6 @@ export class ListPage {
     this.items = [];
 
     this.sensores.forEach(function (val, ind) {
-      //TODO: capitalize pipe add!!!
       self.items.push({
         sensoreName: val
       });

@@ -6,6 +6,7 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { AccountSettings } from '../pages/account-settings/account-settings';
 import { ListPage } from '../pages/list/list';
+import { HouseListPage } from '../pages/house-list/house-list';
 
 @Component({
   templateUrl: 'app.html'
@@ -25,6 +26,7 @@ export class MyApp {
     // set our app's pages
     this.pages = [
       { title: 'Sensors List', component: ListPage },
+      { title: 'House List', component: HouseListPage },
       { title: 'Account Settings', component: AccountSettings }
     ];
   }

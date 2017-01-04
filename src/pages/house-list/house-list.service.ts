@@ -1,23 +1,20 @@
 import { Injectable }    from '@angular/core';
-import { Http } from '@angular/http';
+import { Headers, Http } from '@angular/http';
 
 import { Observable }        from 'rxjs/Observable';
 
 import 'rxjs/Rx';
 
-import { ItemDetailModel } from './item-detail.model';
-
 @Injectable()
-export class ItemDetailService {
+export class HouseListService {
 
   private itemUrl = 'http://localhost:8080/';  // URL to web api
-  //  private itemUrl = 'http://ec2-52-36-209-222.us-west-2.compute.amazonaws.com:9000/ws/temps';  // URL to web api
 
   constructor(private http:Http) {
   }
 
-  getSensoreData(sensoreName:string):Observable<any> {
-    return this.http.get(this.itemUrl + '?name=' + sensoreName)
+  getHousesList(userId:string):Observable<any> {
+    return this.http.get(this.itemUrl + '?user-id=' + userId)
       .map(response => response.json())
       .do(data => console.log("get json: " + JSON.stringify(data)))
       .catch(this.handleError);

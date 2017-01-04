@@ -4,13 +4,15 @@ import { MyApp } from './app.component';
 import { AccountSettings } from '../pages/account-settings/account-settings';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ListPage } from '../pages/list/list';
+import { HouseListPage } from '../pages/house-list/house-list';
 import { HttpModule }    from '@angular/http';
 
 import {CapitalizePipe} from "./pipes/capitalize.pipe";
 import {DatePipe} from "./pipes/date.pipe";
 
 import { ItemDetailService }    from '../pages/item-details/item-detail.service';
-import { ListService }    from '../pages/list/list.service';
+import { ListService }    from '../pages/list/list.service.ts';
+import { HouseListService }    from '../pages/house-list/house-list.service.ts';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { ListService }    from '../pages/list/list.service';
     ItemDetailsPage,
     CapitalizePipe,
     DatePipe,
-    ListPage
+    ListPage,
+    HouseListPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -30,12 +33,14 @@ import { ListService }    from '../pages/list/list.service';
     MyApp,
     AccountSettings,
     ItemDetailsPage,
-    ListPage
+    ListPage,
+    HouseListPage
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ItemDetailService,
-    ListService
+    ListService,
+    HouseListService
   ]
 })
 export class AppModule {}

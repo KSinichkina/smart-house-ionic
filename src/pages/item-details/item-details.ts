@@ -17,7 +17,7 @@ export class ItemDetailsPage {
 
   getHeroes(): void {
     this.itemDetailService
-      .getHeroes(this.searchSensore.sensoreName)
+      .getSensoreData(this.searchSensore.sensoreName)
       .subscribe(items => this.items = items);
   }
 
