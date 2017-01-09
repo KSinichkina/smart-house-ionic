@@ -8,11 +8,11 @@
 </ion-header>
 
 <ion-content>
-  <form (submit)="doSubmit($event)" [formGroup]="houseGroup">
+  <form [formGroup]="houseGroup">
     <ion-list radio-group formControlName="houseControl">
-      <ion-item *ngFor="let item of items">
-        <ion-label>{{ item.houseAddress }}</ion-label>
-        <ion-radio value="{{ item.houseAddress }}"></ion-radio>
+      <ion-item *ngFor="let house of houses">
+        <ion-label>{{ house.address }}</ion-label>
+        <ion-radio (click)="onSelect(item)" value="{{ house.address }}"></ion-radio>
       </ion-item>
     </ion-list>
   </form>

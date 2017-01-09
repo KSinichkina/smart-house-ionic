@@ -1,11 +1,14 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+
 import { AccountSettings } from '../pages/account-settings/account-settings';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ListPage } from '../pages/list/list';
 import { HouseListPage } from '../pages/house-list/house-list';
+
 import { HttpModule }    from '@angular/http';
+import { FormsModule }   from '@angular/forms';
 
 import {CapitalizePipe} from "./pipes/capitalize.pipe";
 import {DatePipe} from "./pipes/date.pipe";
@@ -26,7 +29,8 @@ import { HouseListService }    from '../pages/house-list/house-list.service.ts';
   ],
   imports: [
     IonicModule.forRoot(MyApp),
-    HttpModule
+    HttpModule,
+    FormsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
