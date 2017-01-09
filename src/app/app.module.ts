@@ -2,10 +2,10 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { AccountSettings } from '../pages/account-settings/account-settings';
-import { ItemDetailsPage } from '../pages/item-details/item-details';
-import { ListPage } from '../pages/list/list';
-import { HouseListPage } from '../pages/house-list/house-list';
+import { AccountSettingsComponent } from '../pages/account-settings/account-settings-component';
+import { ItemDetailsComponent } from '../pages/item-details/item-details-component';
+import { ListComponent } from '../pages/list/list-component';
+import { HouseListComponent } from '../pages/house-list/house-list-component';
 
 import { HttpModule }    from '@angular/http';
 import { FormsModule }   from '@angular/forms';
@@ -20,12 +20,12 @@ import { HouseListService }    from '../pages/house-list/house-list.service.ts';
 @NgModule({
   declarations: [
     MyApp,
-    AccountSettings,
-    ItemDetailsPage,
+    AccountSettingsComponent,
+    ItemDetailsComponent,
     CapitalizePipe,
     DatePipe,
-    ListPage,
-    HouseListPage
+    ListComponent,
+    HouseListComponent
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -35,10 +35,10 @@ import { HouseListService }    from '../pages/house-list/house-list.service.ts';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AccountSettings,
-    ItemDetailsPage,
-    ListPage,
-    HouseListPage
+    AccountSettingsComponent,
+    ItemDetailsComponent,
+    ListComponent,
+    HouseListComponent
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},

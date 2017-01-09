@@ -11,7 +11,7 @@ import { ItemDetailModel } from './item-detail.model';
   templateUrl: 'item-details.html'
   //providers: [ItemDetailService]
 })
-export class ItemDetailsPage {
+export class ItemDetailsComponent {
   items: ItemDetailModel[];
   searchSensore:any;
 

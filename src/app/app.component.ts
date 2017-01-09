@@ -4,9 +4,9 @@ import { Platform, MenuController, Nav } from 'ionic-angular';
 
 import { StatusBar, Splashscreen } from 'ionic-native';
 
-import { AccountSettings } from '../pages/account-settings/account-settings';
-import { ListPage } from '../pages/list/list';
-import { HouseListPage } from '../pages/house-list/house-list';
+import { AccountSettingsComponent } from '../pages/account-settings/account-settings-component';
+import { ListComponent } from '../pages/list/list-component';
+import { HouseListComponent } from '../pages/house-list/house-list-component';
 
 @Component({
   templateUrl: 'app.html'
@@ -14,7 +14,7 @@ import { HouseListPage } from '../pages/house-list/house-list';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = ListPage;
+  rootPage: any = ListComponent;
   pages: Array<{title: string, component: any}>;
 
   constructor(
@@ -25,9 +25,9 @@ export class MyApp {
 
     // set our app's pages
     this.pages = [
-      { title: 'Sensors List', component: ListPage },
-      { title: 'House List', component: HouseListPage },
-      { title: 'Account Settings', component: AccountSettings }
+      { title: 'Sensors List', component: ListComponent },
+      { title: 'House List', component: HouseListComponent },
+      { title: 'Account Settings', component: AccountSettingsComponent }
     ];
   }
 

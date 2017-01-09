@@ -6,7 +6,7 @@ import { Platform, ActionSheetController } from 'ionic-angular';
   selector: 'account-settings',
   templateUrl: 'account-settings.html'
 })
-export class AccountSettings {
+export class AccountSettingsComponent {
   constructor(
       public platform: Platform,
       public actionsheetCtrl: ActionSheetController
@@ -27,7 +27,7 @@ export class AccountSettings {
         {
           text: 'Delete Account',
           role: 'destructive',
-          icon: !this.platform.is('ios') ? 'ion-trash-a' : null,
+          icon: !this.platform.is('ios') ? 'ion-trash-a1' : null,
           handler: () => {
             console.log('Delete clicked');
           }

@@ -12,7 +12,7 @@
     <ion-list radio-group formControlName="houseControl">
       <ion-item *ngFor="let house of houses">
         <ion-label>{{ house.address }}</ion-label>
-        <ion-radio (click)="onSelect(item)" value="{{ house.address }}"></ion-radio>
+        <ion-radio (click)="onSelect(house)" value="{{ house.address }}"></ion-radio>
       </ion-item>
     </ion-list>
   </form>

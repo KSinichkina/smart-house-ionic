@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 
-import { ItemDetailsPage } from '../item-details/item-details';
 import { HouseListService } from './house-list.service';
 import { HouseListModel } from './house-list.model';
 
@@ -16,7 +15,7 @@ import {
   templateUrl: 'house-list.html'
   //providers: [HouseListService]
 })
-export class HouseListPage {
+export class HouseListComponent {
   selectedItem: any;
   houses: HouseListModel[];
   houseGroup: FormGroup;
@@ -51,12 +50,12 @@ export class HouseListPage {
         "disabled": true
       }];
 
-    //this.houseGroup = new FormGroup({
-    //  "houseControl": new FormControl({value: 'house1', disabled: false, checked: true})
-    //});
+    this.houseGroup = new FormGroup({
+      "houseControl": new FormControl({value: 'house1', disabled: false, checked: true})
+    });
   }
 
-  onSelect(item: string):void {
+  onSelect(item: HouseListModel):void {
     console.log(item);
   }
 }

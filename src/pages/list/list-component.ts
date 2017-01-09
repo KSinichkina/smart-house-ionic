@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { NavController, NavParams } from 'ionic-angular';
 
-import { ItemDetailsPage } from '../item-details/item-details';
+import { ItemDetailsComponent } from '../item-details/item-details-component';
 import { ListService } from './list.service';
 
 
@@ -11,7 +11,7 @@ import { ListService } from './list.service';
   templateUrl: 'list.html'
   //providers: [ListService]
 })
-export class ListPage {
+export class ListComponent {
   selectedItem: any;
   items: Array<{sensoreName: string}>;
   sensores: string[];
@@ -45,7 +45,7 @@ export class ListPage {
   }
 
   itemTapped(event, item) {
-    this.navCtrl.push(ItemDetailsPage, {
+    this.navCtrl.push(ItemDetailsComponent, {
       item: item
     });
   }
