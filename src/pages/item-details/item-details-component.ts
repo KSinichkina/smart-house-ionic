@@ -20,12 +20,12 @@ export class ItemDetailsComponent {
   public scatterChartOptions:any = {
     chartType: 'ScatterChart',
     dataTable: [
-      ['date', 'temperature']
+      ['date', 'default']
     ],
     options: {
       title: '',
-      hAxis: {title: 'Date', minValue: 0, maxValue: 100},
-      vAxis: {title: 'Temperature', minValue: 0, maxValue: 100},
+      hAxis: {title: '', minValue: 0, maxValue: 100},
+      vAxis: {title: '', minValue: 0, maxValue: 100},
       legend: 'none'
     }
   };

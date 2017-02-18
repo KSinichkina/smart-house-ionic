@@ -20,13 +20,11 @@ export class HouseListComponent {
   houses: HouseListModel[];
   houseGroup: FormGroup;
 
-
   getHousesList(): void {
     this.houseListService
       .getHousesList('user-id')
       .subscribe(houses => this.houses = houses);
   }
-
 
   ngOnInit(): void {
     //this.getHousesList();

@@ -1,6 +1,7 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 
 import { AccountSettingsComponent } from '../pages/account-settings/account-settings-component';
 import { ItemDetailsComponent } from '../pages/item-details/item-details-component';
@@ -30,7 +31,8 @@ import { HouseListService }    from '../pages/house-list/house-list.service.ts';
   imports: [
     IonicModule.forRoot(MyApp),
     HttpModule,
-    FormsModule
+    FormsModule,
+    Ng2GoogleChartsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
