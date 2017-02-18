@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Subject }           from 'rxjs/Subject';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
 
 import { NavController, NavParams } from 'ionic-angular';
 
@@ -15,48 +17,39 @@ export class ItemDetailsComponent {
   items: ItemDetailModel[];
   searchSensore:any;
 
+  public scatterChartOptions:any = {
+    chartType: 'ScatterChart',
+    dataTable: [
+      ['date', 'temperature']
+    ],
+    options: {
+      title: '',
+      hAxis: {title: 'Date', minValue: 0, maxValue: 100},
+      vAxis: {title: 'Temperature', minValue: 0, maxValue: 100},
+      legend: 'none'
+    }
+  };
+
   getHeroes(): void {
     this.itemDetailService
       .getSensoreData(this.searchSensore.sensoreName)
-      .subscribe(items => this.items = items);
+      .subscribe(items => {
+        this.items = items;
+        this.items.map((val, id) => {
+          this.scatterChartOptions.dataTable[id] = [val.messDate.slice(0, 10), val.data];
+          if (id === 0) {
+            this.scatterChartOptions.dataTable[id] = ['date', this.searchSensore.sensoreName];
+          }
+        });
+      })
+
   }
 
-
   ngOnInit(): void {
-    //this.getHeroes();
+    this.getHeroes();
   }
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private itemDetailService: ItemDetailService) {
     this.searchSensore = navParams.get('item');
-
-
-    //TODO: remove mock data after integration
-    switch (this.searchSensore.sensoreName) {
-      case 'temperature':
-        this.items = [{
-          "id": 1,
-          "data": 22,
-          "messDate": "2016-12-01 21:46:28.233"
-        },
-          {
-            "id": 2,
-            "data": 22,
-            "messDate": "2016-12-01 21:51:48.086"
-          }];
-        break;
-
-      case 'humidity':
-        this.items = [{
-          "id": 1,
-          "data": 34,
-          "messDate": "2016-12-01 21:46:28.233"
-        },
-          {
-            "id": 2,
-            "data": 34,
-            "messDate": "2016-12-01 21:51:48.086"
-          }];
-        break;
-    }
   }
 }
