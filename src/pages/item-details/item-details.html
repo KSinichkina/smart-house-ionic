@@ -10,8 +10,7 @@
 <ion-content>
   <ion-card>
     <div class="item-detail-image is-{{searchSensore.sensoreName}}"></div>
-
-    <google-chart [data]="scatterChartOptions"></google-chart>
+    <chart-component [items]="items"></chart-component>
 
     <table class="item-detail-table">
       <thead>

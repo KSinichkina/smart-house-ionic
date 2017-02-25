@@ -1,7 +1,6 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 
 import { AccountSettingsComponent } from '../pages/account-settings/account-settings-component';
 import { ItemDetailsComponent } from '../pages/item-details/item-details-component';
@@ -11,12 +10,16 @@ import { HouseListComponent } from '../pages/house-list/house-list-component';
 import { HttpModule }    from '@angular/http';
 import { FormsModule }   from '@angular/forms';
 
-import {CapitalizePipe} from "./pipes/capitalize.pipe";
-import {DatePipe} from "./pipes/date.pipe";
+import { CapitalizePipe } from "./pipes/capitalize.pipe";
+import { DatePipe } from "./pipes/date.pipe";
+
+import { BrowserModule }          from '@angular/platform-browser';
+import { ChartModule }            from 'angular2-highcharts';
+import { ChartComponent } from "../pages/chart/chart-component";
 
 import { ItemDetailService }    from '../pages/item-details/item-detail.service';
-import { ListService }    from '../pages/list/list.service.ts';
-import { HouseListService }    from '../pages/house-list/house-list.service.ts';
+import { ListService }    from '../pages/list/list.service';
+import { HouseListService }    from '../pages/house-list/house-list.service';
 
 @NgModule({
   declarations: [
@@ -26,13 +29,15 @@ import { HouseListService }    from '../pages/house-list/house-list.service.ts';
     CapitalizePipe,
     DatePipe,
     ListComponent,
-    HouseListComponent
+    HouseListComponent,
+    ChartComponent
   ],
   imports: [
     IonicModule.forRoot(MyApp),
     HttpModule,
     FormsModule,
-    Ng2GoogleChartsModule
+    BrowserModule,
+    ChartModule.forRoot(require('highcharts'))
   ],
   bootstrap: [IonicApp],
   entryComponents: [
