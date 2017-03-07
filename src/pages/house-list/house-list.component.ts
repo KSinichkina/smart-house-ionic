@@ -11,7 +11,7 @@ import {
 
 
 @Component({
-  selector: 'page-house-list',
+  selector: 'house-list',
   templateUrl: 'house-list.html'
   //providers: [HouseListService]
 })

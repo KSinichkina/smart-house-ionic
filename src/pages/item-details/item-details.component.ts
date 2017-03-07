@@ -4,7 +4,7 @@ import { NavController, NavParams } from 'ionic-angular';
 
 import { ItemDetailService } from './item-detail.service';
 import { ItemDetailModel } from './item-detail.model';
-import { ChartComponent } from '../chart/chart-component';
+import { ChartComponent } from '../chart/chart.component';
 
 @Component({
   selector: 'page-item-details',

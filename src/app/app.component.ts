@@ -4,9 +4,9 @@ import { Platform, MenuController, Nav } from 'ionic-angular';
 
 import { StatusBar, Splashscreen } from 'ionic-native';
 
-import { AccountSettingsComponent } from '../pages/account-settings/account-settings-component';
-import { ListComponent } from '../pages/list/list-component';
-import { HouseListComponent } from '../pages/house-list/house-list-component';
+import { AccountSettingsComponent } from '../pages/account-settings/account-settings.component';
+import { ListComponent } from '../pages/sensore-list/sensore-list.component';
+import { HouseListComponent } from '../pages/house-list/house-list.component';
 
 @Component({
   templateUrl: 'app.html'

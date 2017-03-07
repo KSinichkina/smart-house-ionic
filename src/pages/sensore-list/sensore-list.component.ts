@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 
 import { NavController, NavParams } from 'ionic-angular';
 
-import { ItemDetailsComponent } from '../item-details/item-details-component';
-import { ListService } from './list.service';
+import { ItemDetailsComponent } from '../item-details/item-details.component';
+import { ListService } from './sensore-list.service';
 
 
 @Component({
-  selector: 'page-list',
-  templateUrl: 'list.html'
+  selector: 'sensore-list',
+  templateUrl: 'sensore-list.html'
   //providers: [ListService]
 })
 export class ListComponent {

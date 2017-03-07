@@ -33,7 +33,7 @@ export class ChartComponent {
           xAxis: {
             labels: {
               formatter: function() {
-                return date[this.value].slice(0, 10);
+                return date[this.value] ? date[this.value].slice(0, 10) : date[this.value];
               }
             }
           },
