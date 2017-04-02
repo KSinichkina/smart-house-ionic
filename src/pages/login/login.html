@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Sign In</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="onSignIn(email.value, password.value)" novalidate>
+    <ion-card>
+      <ion-item>
+        <ion-label color="primary" stacked>Email</ion-label>
+        <ion-input type="email" #email placeholder="Email Input"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" stacked>Password</ion-label>
+        <ion-input type="password" #password placeholder="Password Input"></ion-input>
+      </ion-item>
+    </ion-card>
+    <button ion-button type="submit" block>Sign in</button>
+  </form>
+  <button ion-button block outline [navPush]="registrationComponent">Registration</button>
+</ion-content>

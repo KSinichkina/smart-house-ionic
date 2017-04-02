@@ -3,6 +3,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { RegistrationComponent } from '../pages/registration/registration.component';
+import { LoginComponent } from '../pages/login/login.component';
 import { AccountSettingsComponent } from '../pages/account-settings/account-settings.component';
 import { ItemDetailsComponent } from '../pages/item-details/item-details.component';
 import { ListComponent } from '../pages/sensore-list/sensore-list.component';
@@ -32,7 +33,8 @@ import { HouseListService }    from '../pages/house-list/house-list.service';
     ListComponent,
     HouseListComponent,
     ChartComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    LoginComponent
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -47,10 +49,15 @@ import { HouseListService }    from '../pages/house-list/house-list.service';
     AccountSettingsComponent,
     ItemDetailsComponent,
     ListComponent,
-    HouseListComponent
+    HouseListComponent,
+    LoginComponent,
+    RegistrationComponent
   ],
   providers: [
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    {
+      provide: ErrorHandler,
+      useClass: IonicErrorHandler
+    },
     ItemDetailService,
     ListService,
     HouseListService

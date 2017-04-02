@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Sign In</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <form (ngSubmit)="onRegistration(email.value, password.value)" novalidate>
+        <ion-item>
+          <ion-label color="primary" stacked>Email</ion-label>
+          <ion-input type="email" #email  placeholder="Email Input"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label color="primary" stacked>Password</ion-label>
+          <ion-input type="password" #password placeholder="Password Input"
+                     required minlength="8"></ion-input>
+          <div *ngIf="password.errors && (password.dirty || password.touched)"
+               class="alert alert-danger">
+            <div [hidden]="!password.errors.required">
+              Password is required
+            </div>
+            <div [hidden]="!password.errors.minlength">
+              Password must be at least 8 characters long.
+            </div>
+          </div>
+        </ion-item>
+      <button ion-button type="submit" block>Register</button>
+    </form>
+  </ion-card>
+</ion-content>
